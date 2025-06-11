@@ -6,8 +6,10 @@ const Inbox = () => {
   const [showInput, setShowInput] = useState(false);
   const [taskText, setTaskText] = useState("");
   const [tasks, setTasks] = useState<Task[]>([]);
+ 
 
   const handleAdd = () =>{
+   
     if (taskText.trim()==="") return
 
     const newTask:Task = {
@@ -55,8 +57,8 @@ const Inbox = () => {
               value={taskText}
               onChange={(e) => setTaskText(e.target.value)}
             />
-            <div onClick={handleAdd} className="flex gap-2 mt-2">
-              <button className="rounded-md cursor-pointer text-white p-2 bg-blue-500">
+            <div  className="flex gap-2 mt-2">
+              <button onClick={handleAdd} className="rounded-md cursor-pointer text-white p-2 bg-green-600 hover:bg-green-700">
                 Add
               </button>
               <button
